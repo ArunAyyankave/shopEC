@@ -1,0 +1,98 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOP EC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script defer src="JS/addValidate.js"></script>
+</head>
+<body>
+    <div class="container">
+        <form id="form" action="" method="post" enctype="multipart/form-data">
+            <h1>Edit Product</h1>
+            <div class="input-control">
+                <label for="name">Product Name</label>
+                <input id="name" name="name" type="text" value="<%= product.name %>">
+                <div class="error"></div>
+            </div>
+            <!-- <div class="input-control">
+                <label for="category">Category</label>
+                <input id="category" name="category" type="text" value="<%= product.category %>">
+                <div class="error"></div>
+            </div> -->
+
+            <div class="input-control">
+                <label for="category">Category</label>
+                
+                <select  name="category" id="category">
+                    <option selected><%= product.category %></option>
+                    <% for (let category of categories) { %>
+                        <option value="<%= category.name %>"><%= category.name %> </option>
+                        <% } %> 
+                </select>
+                <div class="error"></div>
+            </div>
+            
+            
+            <!-- <div class="input-control">
+                <label for="brand">Brand</label>
+                <input id="brand" name="brand" type="text" value="<%= product.brand %>">
+                <div class="error"></div>
+            </div> -->
+
+            <div class="input-control">
+                <label for="brand">Brand</label>
+                
+                <select  name="brand" id="brand">
+                    <option selected><%= product.brand %></option>
+                    <% for(let brand of brands) { %>
+                        <option value="<%= brand.name %> "><%= brand.name %> </option> 
+                        <% } %> 
+                </select>
+                <div class="error"></div>
+            </div>
+            
+
+            <div class="input-control">
+                <label for="description">Description</label>
+                <input id="description" name="description" type="text"  value="<%= product.description %>">
+                <div class="error"></div>
+            </div>
+
+            <!-- img -->
+            <div class="input-control">
+                <label for="image">image</label>
+                <input id="image" name="image" type="file">
+                <div class="error"></div>
+            </div>
+            <!-- img -->
+
+            <div class="input-control">
+                <label for="price">Price</label>
+                <input id="price" name="price" type="text" value="<%= product.price %>">
+                <div class="error"></div>
+            </div>
+
+            <div class="input-control">
+                <label for="stock">Stock</label>
+                <input id="stock" name="stock" type="text" value="<%= product.stock %>">
+                <div class="error"></div>
+            </div>
+
+            <input type="hidden" name="id" value="<%= product._id %>">
+            
+            <button type="submit" value="Update Product">Update Product</button>
+
+            <% if(typeof message !== 'undefined'){ %>
+                <p style="color: red;"><%= message %></p>
+            <% } %>
+        </form>
+
+        
+    </div>
+</body>
+</html>

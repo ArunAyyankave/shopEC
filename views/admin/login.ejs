@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOP EC-Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="CSS/style.css">
+    <script defer src="JS/userValidate.js"></script>
+    
+</head>
+<body  style="background: #79e1e1;">
+    <div class="container">
+
+        
+        
+        <form id="form" action="" method="post">
+            <h1>Admin Login</h1>
+
+            <% if(typeof message !== 'undefined'){ %>
+                <h4 style="color: red;"><%= message %></h4>
+            <% } %>
+            
+            <div class="input-control">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="text">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="password">Password</label>
+                <input id="password"name="password" type="password">
+                <div class="error"></div>
+            </div>
+            
+            <button type="submit">Login</button>
+        </form>
+
+        
+        
+    </div>
+</body>
+</html>

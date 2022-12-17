@@ -1,0 +1,119 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOP EC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/style.css">
+    <script defer src="JS/regValidate.js"></script>
+
+    <link href="css/landing.css" rel="stylesheet">
+
+
+</head>
+<body>
+
+    <!-- Topbar Start -->
+    <div class="container-fluid" style="background:rgb(65, 153, 190) ;">
+        <div class="row bg-secondary py-2 px-xl-5">
+            <div class="col-lg-6 d-none d-lg-block">
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-dark" href="">FAQs</a>
+                    <span class="text-muted px-2">|</span>
+                    <a class="text-dark" href="">Help</a>
+                    <span class="text-muted px-2">|</span>
+                    <a class="text-dark" href="">Support</a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center text-lg-right">
+                <div class="d-inline-flex align-items-center">
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a class="text-dark px-2" href="">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a class="text-dark pl-2" href="">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row align-items-center py-3 px-xl-5">
+            <div class="col-lg-3 d-none d-lg-block">
+                <a href="" class="text-decoration-none">
+                    <h1 class="m-0 display-5 font-weight-semi-bold"><span class="text-primary font-weight-bold border px-3 mr-1">SHOP</span>EC</h1>
+                </a>
+            </div>
+            
+            
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+
+    <div class="container">
+
+        
+
+        <form id="form" action="" method="post" >
+            <h1>Registration</h1>
+
+            <% if(typeof wotp !== 'undefined'){ %>
+                <h6 style="color: red;"><%= wotp %></h6>
+            <% } %>
+
+            <div class="input-control">
+                <label for="username">Username</label>
+                <input id="username" name="name" type="text">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="text">
+                <div class="error"></div>
+            </div>
+            <!-- mobile, img -->
+            <div class="input-control">
+                <label for="mobile">Mobile</label>
+                <input id="mobile" name="mno" type="text">
+                <div class="error"></div>
+            </div>
+
+            
+            <!-- mobile, img -->
+            <div class="input-control">
+                <label for="password">Password</label>
+                <input id="password"name="password" type="password">
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="password2">Password again</label>
+                <input id="password2"name="" type="password">
+                <div class="error"></div>
+            </div>
+            <button type="submit">Sign Up</button>
+
+            <p>Already have an account? <a href="/login">Login</a></p>
+
+            <% if(typeof message !== 'undefined'){ %>
+                <p style="color: red;"><%= message %></p>
+            <% } %>
+        </form>
+
+        
+    </div>
+    <br>
+    <br>
+</body>
+</html>
